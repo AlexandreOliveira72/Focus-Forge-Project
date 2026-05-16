@@ -2,10 +2,7 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <!-- Responsividade -->
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -13,38 +10,39 @@
 
     <title>Login</title>
 
-    <!-- CSS -->
     <link
         rel="stylesheet"
         href="../../css/login.css"
     >
-
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- =========================
+    NAVBAR
+    ========================== -->
+
     <header class="topbar">
+        <nav class="navbar">
 
-        <!-- Voltar para home -->
-        <a
-            href="../../index.html"
-            class="home-link"
-        >
-            FocusForge
-        </a>
+            <a
+                href="../../index.html"
+                class="logo"
+            >
+                FocusForge
+            </a>
 
+        </nav>
     </header>
 
+    <!-- =========================
+    CONTAINER
+    ========================== -->
 
-
-    <!-- CONTAINER -->
     <main class="container">
 
-        <!-- CAIXA LOGIN -->
+        <!-- LOGIN BOX -->
         <section class="login-box">
-
-
 
             <!-- LADO ESQUERDO -->
             <div class="login-image">
@@ -54,12 +52,9 @@
                     alt="Imagem Login"
                 >
 
-                <!-- Overlay -->
                 <div class="image-overlay">
 
-                    <h2>
-                        Build Focus.
-                    </h2>
+                    <h2>Build Focus.</h2>
 
                     <p>
                         Organize sua rotina,
@@ -71,42 +66,38 @@
 
             </div>
 
-
-
             <!-- LADO DIREITO -->
             <div class="login-form">
 
                 <form>
 
-                    <!-- Título -->
-                    <h2>
-                        Login
-                    </h2>
+                    <!-- TÍTULO -->
+                    <h2>Login</h2>
 
-
-
-                    <!-- Input email -->
+                    <!-- EMAIL -->
                     <input
                         type="email"
                         placeholder="Email"
                     >
 
-
-
-                    <!-- Input senha -->
+                    <!-- PASSWORD -->
                     <input
                         type="password"
                         placeholder="Password"
                     >
 
+                    <!-- FORGOT PASSWORD -->
+                    <div class="forgot-password">
 
+                        <a href="#">
+                            Forgot password?
+                        </a>
 
-                    <!-- Área dos botões -->
+                    </div>
+
+                    <!-- SIGN IN -->
                     <div class="auth-actions">
 
-
-
-                        <!-- Sign In -->
                         <div class="button-borders">
 
                             <button
@@ -118,19 +109,34 @@
 
                         </div>
 
+                    </div>
 
+                    <!-- DIVIDER -->
+                    <div class="divider">
 
-                        <!-- Register -->
-                        <div class="button-borders">
+                        <span>
+                            Or continue with
+                        </span>
 
-                            <a
-                                href="register.html"
-                                class="primary-button"
-                            >
-                                Register
+                    </div>
+
+                    <!-- GOOGLE BUTTON -->
+                    <button
+                        type="button"
+                        class="google-button"
+                    >
+                        Continue with Google
+                    </button>
+
+                    <!-- REGISTER -->
+                    <div class="register-text">
+
+                        <p>
+                            Don't have an account?
+                            <a href="register.html">
+                                Register here
                             </a>
-
-                        </div>
+                        </p>
 
                     </div>
 

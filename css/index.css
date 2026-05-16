@@ -1,231 +1,603 @@
+/* =========================
+RESET
+========================= */
+
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
 
-/* BODY */
+/* =========================
+BODY
+========================= */
 
 body{
 
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 
-  background-color: #0f172a;
+    background-color: #0f172a;
 
-  color: white;
+    color: white;
+
+    overflow-x: hidden;
 }
 
 
 
-/* LINKS */
+/* =========================
+LINKS
+========================= */
 
 a{
 
-  text-decoration: none;
+    text-decoration: none;
 
-  color: inherit;
+    color: inherit;
 }
 
 
 
-/* NAVBAR */
+/* =========================
+NAVBAR
+========================= */
 
-nav{
+.navbar{
 
-  width: 100%;
+    width: 100%;
 
-  padding: 1rem 5%;
+    padding: 1rem 5%;
 
-  background: rgba(255, 255, 255, 0.05);
+    display: flex;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: space-between;
 
-  backdrop-filter: blur(15px);
+    align-items: center;
 
-  display: flex;
+    position: fixed;
 
-  justify-content: space-between;
+    top: 0;
 
-  align-items: center;
+    left: 0;
 
-  position: fixed;
+    z-index: 1000;
 
-  top: 0;
+    background: rgba(255,255,255,0.05);
 
-  left: 0;
+    backdrop-filter: blur(15px);
 
-  z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 
 
-/* LOGO */
+/* =========================
+LOGO
+========================= */
 
 .logo{
 
-  font-size: 1.8rem;
+    font-size: 1.45rem;
 
-  font-weight: bold;
+    font-weight: bold;
 
-  color: #38bdf8;
+    color: #38bdf8;
 
-  letter-spacing: 1px;
+    letter-spacing: 1px;
 }
 
 
 
-/* HERO */
+/* =========================
+NAV LINKS
+========================= */
 
-.hero{
+.nav-links{
 
-  position: relative;
+    display: flex;
 
-  height: 100vh;
+    gap: 2rem;
+}
 
-  overflow: hidden;
+.nav-links a{
+
+    color: rgba(255,255,255,0.75);
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+
+    color: white;
 }
 
 
 
-/* IMAGEM */
-
-.background img{
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  filter: brightness(0.5);
-}
-
-
-
-/* CONTEÚDO */
-
-.hero-content{
-
-  position: absolute;
-
-  top: 50%;
-
-  left: 8%;
-
-  transform: translateY(-50%);
-
-  z-index: 2;
-
-  /*
-  largura adaptável
-  */
-  width: 90%;
-
-  /*
-  impede texto gigante
-  */
-  max-width: 600px;
-}
-
-
-
-/* TITULO */
-
-.hero-content h2{
-
-  /*
-  tamanho responsivo 😎🔥
-
-  mínimo: 2rem
-  ideal: 5vw
-  máximo: 4.5rem
-  */
-  font-size: clamp(2rem, 5vw, 4.5rem);
-
-  margin-bottom: 1rem;
-
-  line-height: 1.1;
-}
-
-
-
-/* TEXTO */
-
-.hero-content p{
-
-  /*
-  responsivo também
-  */
-  font-size: clamp(1rem, 2vw, 1.4rem);
-
-  line-height: 1.6;
-
-  margin-bottom: 2rem;
-}
-
-
-
-/* ÁREA DOS BOTÕES */
-
-.hero-action{
-
-  display: flex;
-
-  gap: 1rem;
-
-  margin-top: 2rem;
-
-  /*
-  quebra linha se faltar espaço
-  */
-  flex-wrap: wrap;
-}
-
-
-
-/* BOTÃO */
+/* =========================
+BOTÃO
+========================= */
 
 .btn1{
 
-  padding: 0.8rem 1.7rem;
+    padding: 0.8rem 1.7rem;
 
-  border-radius: 30px;
+    border-radius: 30px;
 
-  font-weight: 600;
+    font-weight: 600;
 
-  font-size: 1rem;
+    font-size: 1rem;
 
-  background: #ffffff;
+    background: white;
 
-  color: #0f172a;
+    color: #0f172a;
 
-  box-shadow: 0 0 15px #7e7e7e;
+    transition: 0.3s;
 
-  transition: 0.3s;
-
-  display: inline-block;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
-
-
-
-/* HOVER */
 
 .btn1:hover{
 
-  background: #b3b3b3;
+    transform: scale(1.05);
 
-  box-shadow: 0 0 25px #b3b3b3;
-
-  transform: scale(1.05);
+    background: #d6d6d6;
 }
 
 
 
-/* MAIN */
+/* =========================
+MAIN
+========================= */
 
 main{
 
-  padding-top: 80px;
+    padding-top: 80px;
+}
+
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+    position: relative;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+
+/* =========================
+BACKGROUND
+========================= */
+
+.background{
+
+    width: 100%;
+
+    height: 100%;
+}
+
+.background img{
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.45);
+}
+
+
+
+/* =========================
+OVERLAY ENTRE HERO E FEATURES
+========================= */
+
+.hero::after{
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 180px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(15,23,42,0) 0%,
+        rgba(15,23,42,0.75) 50%,
+        #0f172a 100%
+    );
+
+    z-index: 1;
+}
+
+
+
+/* =========================
+HERO CONTENT
+========================= */
+
+.hero-content{
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 8%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    width: 90%;
+
+    max-width: 700px;
+}
+
+
+
+/* =========================
+HERO TEXT
+========================= */
+
+.hero-text h2{
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 1rem;
+}
+
+.hero-text p{
+
+    font-size: clamp(1rem, 2vw, 1.3rem);
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.85);
+
+    margin-bottom: 2rem;
+}
+
+
+
+/* =========================
+HERO BUTTONS
+========================= */
+
+.hero-buttons{
+
+    display: flex;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+}
+
+
+
+/* =========================
+FEATURES
+========================= */
+
+.features{
+
+    width: 100%;
+
+    padding: 8rem 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8rem;
+
+    position: relative;
+}
+
+
+
+/* =========================
+FEATURES TITLE
+========================= */
+
+.features-title{
+
+    text-align: center;
+}
+
+.features-title h2{
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    margin-bottom: 1rem;
+}
+
+.features-title p{
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 1.1rem;
+}
+
+
+
+/* =========================
+FEATURE BLOCK
+========================= */
+
+.feature-block{
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 4rem;
+
+    flex-wrap: wrap;
+}
+
+
+
+/* INVERTE LADO */
+
+.feature-block.reverse{
+
+    flex-direction: row-reverse;
+}
+
+
+
+/* =========================
+PREVIEW / GIF
+========================= */
+
+.feature-preview{
+
+    flex: 1;
+
+    min-width: 300px;
+
+    height: 350px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: rgba(255,255,255,0.3);
+
+    font-size: 1.2rem;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+
+/* PLACEHOLDER DO GIF */
+
+.feature-preview::before{
+
+    content: "GIF Preview";
+
+    color: rgba(255,255,255,0.25);
+
+    font-size: 1rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =========================
+FEATURE TEXT
+========================= */
+
+.feature-text{
+
+    flex: 1;
+
+    min-width: 300px;
+}
+
+.feature-text h3{
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    margin-bottom: 1.5rem;
+}
+
+.feature-text p{
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.75);
+
+    max-width: 500px;
+}
+
+
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+
+    width: 100%;
+
+    padding: 2rem 8%;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.02);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+}
+
+
+
+/* =========================
+FOOTER LEFT
+========================= */
+
+.footer-left{
+
+    color: rgba(255,255,255,0.5);
+
+    font-size: 0.95rem;
+}
+
+
+
+/* =========================
+FOOTER LINKS
+========================= */
+
+.footer-links{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+
+    flex-wrap: wrap;
+}
+
+.footer-links a{
+
+    color: rgba(255,255,255,0.6);
+
+    transition: 0.3s;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+}
+
+.footer-links a:hover{
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+
+/* =========================
+GITHUB ICON
+========================= */
+
+.footer-links svg{
+
+    width: 22px;
+
+    height: 22px;
+
+    fill: currentColor;
+
+    transition: 0.3s;
+}
+
+.footer-links svg:hover{
+
+    transform: scale(1.1);
+}
+
+
+
+/* =========================
+RESPONSIVO
+========================= */
+
+@media (max-width: 900px){
+
+    .navbar{
+
+        padding: 1rem 6%;
+    }
+
+    .nav-links{
+
+        display: none;
+    }
+
+    .hero-content{
+
+        left: 6%;
+    }
+
+    .feature-block,
+    .feature-block.reverse{
+
+        flex-direction: column;
+    }
+
+    .feature-text{
+
+        text-align: center;
+    }
+
+    .feature-text p{
+
+        max-width: 100%;
+    }
+
+    .feature-preview{
+
+        width: 100%;
+    }
+
+    .footer{
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-links{
+
+        justify-content: center;
+    }
 }

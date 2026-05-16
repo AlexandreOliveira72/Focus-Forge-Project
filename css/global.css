@@ -1,0 +1,385 @@
+/* =========================
+RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* =========================
+BODY
+========================= */
+
+body{
+
+    font-family: "Poppins", sans-serif;
+
+    background: #0f172a;
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+
+/* =========================
+TOPBAR
+========================= */
+
+.topbar{
+
+    width: 100%;
+
+    /* MAIS FINA */
+    height: 65px;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+
+/* =========================
+NAV
+========================= */
+
+.topbar-nav{
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 0 1.5rem;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+
+/* =========================
+LOGO
+========================= */
+
+.logo{
+
+    text-decoration: none;
+
+    color: #38bdf8;
+
+    font-size: 1.45rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* =========================
+NAV RIGHT
+========================= */
+
+.nav-right{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+}
+
+
+
+/* =========================
+BOTÕES TOPBAR
+========================= */
+
+.topbar-button,
+.icon-button{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: white;
+
+    padding: 0.65rem 0.9rem;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+
+/* HOVER */
+
+.topbar-button:hover,
+.icon-button:hover{
+
+    background: rgba(255,255,255,0.1);
+
+    transform: translateY(-2px);
+}
+
+
+
+/* =========================
+PROFILE
+========================= */
+
+.profile-button{
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+
+/* FOTO PERFIL */
+
+.profile-button img{
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+
+/* =========================
+SIDEBAR
+========================= */
+
+.sidebar{
+
+    width: 75px;
+
+    height: calc(100vh - 65px);
+
+    position: fixed;
+
+    top: 65px;
+
+    left: 0;
+
+    background: rgba(255,255,255,0.03);
+
+    backdrop-filter: blur(12px);
+
+    border-right: 1px solid rgba(255,255,255,0.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    padding: 0.8rem;
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+
+
+/* SIDEBAR EXPANDIDA */
+
+.sidebar.expanded{
+
+    width: 210px;
+
+    align-items: flex-start;
+}
+
+
+
+/* =========================
+BOTÕES SIDEBAR
+========================= */
+
+.sidebar-button{
+
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: transparent;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 0 0.9rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    flex-shrink: 0;
+}
+
+
+
+/* HOVER */
+
+.sidebar-button:hover{
+
+    background: rgba(255,255,255,0.08);
+
+    transform: translateX(4px);
+}
+
+
+
+/* TEXTO BOTÃO */
+
+.sidebar-button span{
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.2s;
+
+    white-space: nowrap;
+}
+
+
+
+/* TEXTO AO EXPANDIR */
+
+.sidebar.expanded .sidebar-button span{
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+
+/* =========================
+BOTÃO EXPANDIR
+========================= */
+
+.expand-button{
+
+    margin-bottom: 1rem;
+}
+
+
+
+/* =========================
+SVG
+========================= */
+
+svg{
+
+    flex-shrink: 0;
+}
+
+
+
+/* =========================
+CONTEÚDO
+========================= */
+
+.dashboard-content{
+
+    margin-left: 75px;
+
+    margin-top: 65px;
+
+    padding: 2rem;
+
+    transition: 0.3s;
+}
+
+
+
+/* MOVE CONTEÚDO */
+
+.sidebar.expanded ~ .dashboard-content{
+
+    margin-left: 210px;
+}
+
+
+
+/* =========================
+RESPONSIVO
+========================= */
+
+@media (max-width: 768px){
+
+    .topbar-button span{
+
+        display: none;
+    }
+
+    .sidebar{
+
+        width: 70px;
+    }
+
+    .sidebar.expanded{
+
+        width: 200px;
+    }
+
+    .dashboard-content{
+
+        margin-left: 70px;
+    }
+
+}
