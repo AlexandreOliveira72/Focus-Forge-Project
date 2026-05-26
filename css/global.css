@@ -267,6 +267,8 @@ BOTÕES SIDEBAR
     transition: 0.3s;
 
     flex-shrink: 0;
+
+    text-decoration: none;
 }
 
 
