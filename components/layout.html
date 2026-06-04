@@ -1,0 +1,192 @@
+<!-- =========================
+TOPBAR
+========================= -->
+
+<header class="topbar">
+
+    <nav class="topbar-nav">
+
+        <div class="nav-left">
+
+            <a href="/index.html" class="logo">
+                FocusForge
+            </a>
+
+        </div>
+
+        <div class="nav-right">
+
+            <button class="topbar-button">
+                Tasks 3/X
+            </button>
+
+            <button class="topbar-button">
+                17 Days
+            </button>
+
+            <button
+                class="icon-button"
+                id="notification-button"
+                onclick="toggleNotifications()"
+            >
+                <img
+                    src="/assets/icons/bell.png"
+                    alt="Notificações"
+                    class="topbar-icon"
+                >
+            </button>
+
+            <button
+                class="icon-button"
+                id="theme-button"
+                onclick="toggleTheme()"
+            >
+                <img
+                    src="/assets/icons/moon.png"
+                    alt="Tema"
+                    class="topbar-icon"
+                >
+            </button>
+
+            <a
+                href="/pages/profile/profile.html"
+                class="profile-button"
+            >
+                <img
+                    src="/assets/icons/profile.png"
+                    alt="Perfil"
+                    class="profile-pic"
+                >
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- =========================
+SIDEBAR
+========================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+    <!-- EXPAND -->
+
+    <button
+        class="sidebar-button expand-button"
+        onclick="toggleSidebar()"
+    >
+
+        <img
+            src="/assets/icons/menu.png"
+            alt="Expandir"
+            class="sidebar-icon"
+        >
+
+        <span>Expand</span>
+
+    </button>
+
+    <!-- DASHBOARD -->
+
+    <a
+        href="/pages/app/dashboard.html"
+        class="sidebar-button"
+    >
+
+        <img
+            src="/assets/icons/dashboard.png"
+            alt="Dashboard"
+            class="sidebar-icon"
+        >
+
+        <span>Dashboard</span>
+
+    </a>
+
+    <!-- HABITS -->
+
+    <a
+        href="/pages/app/habits.html"
+        class="sidebar-button"
+    >
+
+        <img
+            src="/assets/icons/calendar.png"
+            alt="Habit Tracker"
+            class="sidebar-icon"
+        >
+
+        <span>Habit Tracker</span>
+
+    </a>
+
+    <!-- TASKS -->
+
+    <a
+        href="/pages/app/tasks.html"
+        class="sidebar-button"
+    >
+
+        <img
+            src="/assets/icons/clipboard.png"
+            alt="Tasks"
+            class="sidebar-icon"
+        >
+
+        <span>Tasks</span>
+
+    </a>
+
+    <!-- POMODORO -->
+
+    <a
+        href="/pages/app/pomodoro.html"
+        class="sidebar-button"
+    >
+
+        <img
+            src="/assets/icons/clock.png"
+            alt="Pomodoro"
+            class="sidebar-icon"
+        >
+
+        <span>Pomodoro</span>
+
+    </a>
+
+    <!-- SETTINGS -->
+
+    <a
+        href="/pages/app/settings.html"
+        class="sidebar-button settings-button"
+    >
+
+        <img
+            src="/assets/icons/settings.png"
+            alt="Configurações"
+            class="sidebar-icon"
+        >
+
+        <span>Configurações</span>
+
+    </a>
+
+</aside>
+
+<!-- =========================
+NOTIFICATION PANEL
+========================= -->
+
+<div
+    id="notification-panel"
+    class="notification-panel"
+>
+
+    <h3>Notificações</h3>
+
+</div>

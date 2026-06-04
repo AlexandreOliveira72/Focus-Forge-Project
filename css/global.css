@@ -8,107 +8,69 @@ RESET
     box-sizing: border-box;
 }
 
-
-
 /* =========================
 BODY
 ========================= */
 
 body{
-
     font-family: "Poppins", sans-serif;
-
     background: #0f172a;
-
     color: white;
-
     min-height: 100vh;
 }
-
-
 
 /* =========================
 TOPBAR
 ========================= */
 
 .topbar{
-
     width: 100%;
-
-    /* MAIS FINA */
     height: 65px;
 
     position: fixed;
-
     top: 0;
-
     left: 0;
 
     z-index: 1000;
 
     background: rgba(255,255,255,0.05);
-
     backdrop-filter: blur(12px);
 
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-
-
-/* =========================
-NAV
-========================= */
-
 .topbar-nav{
-
     width: 100%;
-
     height: 100%;
 
     padding: 0 1.5rem;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
-
-
 
 /* =========================
 LOGO
 ========================= */
 
 .logo{
-
     text-decoration: none;
-
     color: #38bdf8;
 
-    font-size: 1.45rem;
-
+    font-size: 1.4rem;
     font-weight: bold;
-
-    letter-spacing: 1px;
 }
-
-
 
 /* =========================
 NAV RIGHT
 ========================= */
 
 .nav-right{
-
     display: flex;
-
     align-items: center;
-
-    gap: 0.8rem;
+    gap: .8rem;
 }
-
-
 
 /* =========================
 BOTÕES TOPBAR
@@ -116,272 +78,249 @@ BOTÕES TOPBAR
 
 .topbar-button,
 .icon-button{
-
     display: flex;
-
     align-items: center;
-
-    gap: 0.5rem;
+    justify-content: center;
 
     background: rgba(255,255,255,0.05);
-
     border: 1px solid rgba(255,255,255,0.08);
 
     color: white;
 
-    padding: 0.65rem 0.9rem;
-
+    padding: .7rem 1rem;
     border-radius: 12px;
 
     cursor: pointer;
-
-    transition: 0.3s;
+    transition: .3s;
 }
-
-
-
-/* HOVER */
 
 .topbar-button:hover,
 .icon-button:hover{
-
-    background: rgba(255,255,255,0.1);
-
+    background: rgba(255,255,255,0.10);
     transform: translateY(-2px);
 }
 
+.topbar-icon{
+    width: 20px;
+    height: 20px;
 
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+}
 
 /* =========================
 PROFILE
 ========================= */
 
 .profile-button{
-
     width: 42px;
-
     height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
 
     border-radius: 50%;
 
     overflow: hidden;
 
-    border: none;
-
     cursor: pointer;
+    transition: .3s;
 }
 
+.profile-button:hover{
+    background: rgba(255,255,255,0.10);
+    transform: scale(1.05);
+}
 
-
-/* FOTO PERFIL */
-
-.profile-button img{
-
+.profile-pic{
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
+    border-radius: 50%;
 }
-
-
 
 /* =========================
 SIDEBAR
 ========================= */
 
 .sidebar{
-
-    width: 75px;
-
+    width: 80px;
     height: calc(100vh - 65px);
 
     position: fixed;
-
     top: 65px;
-
     left: 0;
 
-    background: rgba(255,255,255,0.03);
+    z-index: 1100;
 
+    background: rgba(255,255,255,0.03);
     backdrop-filter: blur(12px);
 
     border-right: 1px solid rgba(255,255,255,0.08);
 
     display: flex;
-
     flex-direction: column;
 
-    align-items: center;
-
-    gap: 0.7rem;
-
-    padding: 0.8rem;
-
-    transition: 0.3s;
+    gap: .8rem;
+    padding: 12px;
 
     overflow: hidden;
+
+    transition: width .3s ease;
 }
-
-
-
-/* SIDEBAR EXPANDIDA */
 
 .sidebar.expanded{
-
-    width: 210px;
-
-    align-items: flex-start;
+    width: 235px;
 }
-
-
 
 /* =========================
 BOTÕES SIDEBAR
 ========================= */
 
 .sidebar-button{
-
     width: 100%;
+    height: 56px;
 
-    height: 48px;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: center;
 
     border: none;
-
     border-radius: 14px;
 
     background: transparent;
 
     color: white;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 1rem;
-
-    padding: 0 0.9rem;
+    text-decoration: none;
 
     cursor: pointer;
+    overflow: hidden;
 
-    transition: 0.3s;
-
-    flex-shrink: 0;
-
-    text-decoration: none;
+    transition:
+        background .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
 }
-
-
-
-/* HOVER */
 
 .sidebar-button:hover{
-
-    background: rgba(255,255,255,0.08);
-
-    transform: translateX(4px);
+    background: rgba(56,189,248,.20);
+    box-shadow: 0 0 16px rgba(56,189,248,.20);
 }
-
-
-
-/* TEXTO BOTÃO */
-
-.sidebar-button span{
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition: 0.2s;
-
-    white-space: nowrap;
-}
-
-
-
-/* TEXTO AO EXPANDIR */
-
-.sidebar.expanded .sidebar-button span{
-
-    opacity: 1;
-
-    pointer-events: auto;
-}
-
-
 
 /* =========================
-BOTÃO EXPANDIR
+ÍCONE SIDEBAR
+========================= */
+
+.sidebar-icon{
+    width: 28px;
+    height: 28px;
+
+    justify-self: center;
+    align-self: center;
+
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================
+TEXTO SIDEBAR
+========================= */
+
+.sidebar-button span{
+    justify-self: start;
+
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+
+    overflow: hidden;
+
+    transition: opacity .2s ease;
+}
+
+.sidebar.expanded .sidebar-button span{
+    opacity: 1;
+}
+
+/* =========================
+EXPAND
 ========================= */
 
 .expand-button{
-
-    margin-bottom: 1rem;
+    margin-bottom: 12px;
 }
-
-
 
 /* =========================
-SVG
+SETTINGS NO FINAL
 ========================= */
 
-svg{
-
-    flex-shrink: 0;
+.settings-button{
+    margin-top: auto;
 }
-
-
 
 /* =========================
 CONTEÚDO
 ========================= */
 
+.main-content,
 .dashboard-content{
-
-    margin-left: 75px;
-
     margin-top: 65px;
+    margin-left: 80px;
+
+    min-height: calc(100vh - 65px);
 
     padding: 2rem;
 
-    transition: 0.3s;
+    transition: margin-left .3s ease;
 }
 
+/* =========================
+NOTIFICAÇÕES
+========================= */
 
+.notification-panel{
+    position: fixed;
+    top: 75px;
+    right: 20px;
 
-/* MOVE CONTEÚDO */
+    width: 300px;
+    padding: 1rem;
 
-.sidebar.expanded ~ .dashboard-content{
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
 
-    margin-left: 210px;
+    display: none;
+    z-index: 1100;
 }
 
-
+.notification-panel.active{
+    display: block;
+}
 
 /* =========================
 RESPONSIVO
 ========================= */
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
-    .topbar-button span{
-
+    .topbar-button{
         display: none;
     }
 
     .sidebar{
-
-        width: 70px;
+        width: 80px;
     }
 
     .sidebar.expanded{
-
-        width: 200px;
+        width: 220px;
     }
-
-    .dashboard-content{
-
-        margin-left: 70px;
-    }
-
 }
