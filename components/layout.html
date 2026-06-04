@@ -3,25 +3,31 @@ TOPBAR
 ========================= -->
 
 <header class="topbar">
-
     <nav class="topbar-nav">
-
         <div class="nav-left">
-
-            <a href="/index.html" class="logo">
-                FocusForge
-            </a>
-
+            <div class="topbar-spacer"></div>
         </div>
 
         <div class="nav-right">
-
-            <button class="topbar-button">
-                Tasks 3/X
+            <!-- SEQUENCE DAYS -->
+            <button class="topbar-button stat-button stat-fire" id="sequence-button">
+                <img src="/assets/icons/fire.png" alt="Sequência de dias" class="topbar-icon">
+                <span class="stat-value">17</span>
+                <span class="stat-label">Days</span>
             </button>
 
-            <button class="topbar-button">
-                17 Days
+            <!-- HOURS FOCUSED -->
+            <button class="topbar-button stat-button stat-clock" id="focused-button">
+                <img src="/assets/icons/focused.png" alt="Horas focadas hoje" class="topbar-icon">
+                <span class="stat-value">3.4</span>
+                <span class="stat-label">Hours</span>
+            </button>
+
+            <!-- TASKS COMPLETED -->
+            <button class="topbar-button stat-button stat-check" id="tasks-button">
+                <img src="/assets/icons/checked.png" alt="Tarefas concluídas" class="topbar-icon">
+                <span class="stat-value">8</span>
+                <span class="stat-label">Done</span>
             </button>
 
             <button
@@ -47,135 +53,116 @@ TOPBAR
                     class="topbar-icon"
                 >
             </button>
-
-            <a
-                href="/pages/profile/profile.html"
-                class="profile-button"
-            >
-                <img
-                    src="/assets/icons/profile.png"
-                    alt="Perfil"
-                    class="profile-pic"
-                >
-            </a>
-
         </div>
-
     </nav>
-
 </header>
 
 <!-- =========================
 SIDEBAR
 ========================= -->
 
-<aside
-    class="sidebar"
-    id="sidebar"
->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+        <a href="/pages/app/dashboard.html" class="sidebar-logo-link">
+            <img
+                src="/assets/icons/FocusIcon.png"
+                alt="FocusForge"
+                class="sidebar-brand-icon"
+            >
+            <span class="sidebar-brand-text">FocusForge</span>
+        </a>
+    </div>
 
     <!-- EXPAND -->
-
     <button
         class="sidebar-button expand-button"
         onclick="toggleSidebar()"
     >
-
         <img
             src="/assets/icons/menu.png"
             alt="Expandir"
             class="sidebar-icon"
         >
-
         <span>Expand</span>
-
     </button>
 
     <!-- DASHBOARD -->
-
     <a
         href="/pages/app/dashboard.html"
         class="sidebar-button"
     >
-
         <img
             src="/assets/icons/dashboard.png"
             alt="Dashboard"
             class="sidebar-icon"
         >
-
         <span>Dashboard</span>
-
-    </a>
-
-    <!-- HABITS -->
-
-    <a
-        href="/pages/app/habits.html"
-        class="sidebar-button"
-    >
-
-        <img
-            src="/assets/icons/calendar.png"
-            alt="Habit Tracker"
-            class="sidebar-icon"
-        >
-
-        <span>Habit Tracker</span>
-
-    </a>
-
-    <!-- TASKS -->
-
-    <a
-        href="/pages/app/tasks.html"
-        class="sidebar-button"
-    >
-
-        <img
-            src="/assets/icons/clipboard.png"
-            alt="Tasks"
-            class="sidebar-icon"
-        >
-
-        <span>Tasks</span>
-
     </a>
 
     <!-- POMODORO -->
-
     <a
         href="/pages/app/pomodoro.html"
         class="sidebar-button"
     >
-
         <img
-            src="/assets/icons/clock.png"
+            src="/assets/icons/pomodoro.png"
             alt="Pomodoro"
             class="sidebar-icon"
         >
-
         <span>Pomodoro</span>
+    </a>
 
+    <!-- TASKS -->
+    <a
+        href="/pages/app/tasks.html"
+        class="sidebar-button"
+    >
+        <img
+            src="/assets/icons/tasks.png"
+            alt="Tasks"
+            class="sidebar-icon"
+        >
+        <span>Tasks</span>
+    </a>
+
+    <!-- HABIT TRACKER -->
+    <a
+        href="/pages/app/habit.html"
+        class="sidebar-button"
+    >
+        <img
+            src="/assets/icons/habit.png"
+            alt="Habit Tracker"
+            class="sidebar-icon"
+        >
+        <span>Habit Tracker</span>
+    </a>
+
+    <!-- STATISTICS -->
+    <a
+        href="/pages/app/statistics.html"
+        class="sidebar-button"
+    >
+        <img
+            src="/assets/icons/statistics.png"
+            alt="Statistics"
+            class="sidebar-icon"
+        >
+        <span>Statistics</span>
     </a>
 
     <!-- SETTINGS -->
-
     <a
         href="/pages/app/settings.html"
         class="sidebar-button settings-button"
     >
-
         <img
-            src="/assets/icons/settings.png"
+            src="/assets/icons/user.png"
             alt="Configurações"
             class="sidebar-icon"
         >
-
-        <span>Configurações</span>
-
+        <span>Profile</span>
     </a>
-
 </aside>
 
 <!-- =========================
@@ -186,7 +173,5 @@ NOTIFICATION PANEL
     id="notification-panel"
     class="notification-panel"
 >
-
     <h3>Notificações</h3>
-
 </div>
