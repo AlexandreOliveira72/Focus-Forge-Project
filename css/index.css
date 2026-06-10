@@ -48,6 +48,8 @@ NAVBAR
 
     width: 100%;
 
+    height: 70px;
+
     padding: 1rem 5%;
 
     display: flex;
@@ -153,7 +155,7 @@ MAIN
 
 main{
 
-    padding-top: 80px;
+    padding-top: 70px;
 }
 
 

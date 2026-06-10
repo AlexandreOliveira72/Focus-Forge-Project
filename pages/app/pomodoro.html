@@ -1,19 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
+    <!-- Configuração básica da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos globais do app -->
     <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Estilo específico da página Pomodoro -->
     <link rel="stylesheet" href="/css/pomodoro.css">
+
     <title>Pomodoro</title>
 </head>
 <body>
 
+    <!-- Layout compartilhado carregado via JS -->
     <div id="layout-container"></div>
-    <main class="main-content">
+
+    <!-- Conteúdo principal da página -->
+    <main class="main-content" id="pomodoro-content">
+
         <h2>Pomodoro</h2>
+
+        <!-- =========================
+        TOPO: PRESETS + PROGRESSO
+        ========================== -->
+        <section class="pomodoro-top">
+
+            <!-- Card de presets -->
+            <div class="preset-card">
+                <h3>Escolha um preset</h3>
+
+                <div class="preset-grid">
+                    <button class="preset-btn">
+                        <strong>Clássico</strong>
+                        <span>25/5</span>
+                    </button>
+
+                    <button class="preset-btn">
+                        <strong>Deep Work</strong>
+                        <span>50/10</span>
+                    </button>
+
+                    <button class="preset-btn">
+                        <strong>Programação</strong>
+                        <span>90/20</span>
+                    </button>
+
+                    <button class="preset-btn">
+                        <strong>Personalizado</strong>
+                        <img
+                            class="preset-icon"
+                            src="/assets/pomodoro/preference.png"
+                            alt="Personalizado"
+                        >
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card de progresso da sessão -->
+            <div class="session-progress-card">
+                <h3>Progresso da sessão</h3>
+
+                <div class="session-progress-info">
+                    <span class="progress-value">0%</span>
+                    <span class="cycle-info">0 de 8 ciclos</span>
+                    <span class="time-estimate">Final previsto: 20:30</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =========================
+        MEIO: TIMER + HISTÓRICO
+        ========================== -->
+        <section class="pomodoro-center">
+
+            <!-- Card principal do timer -->
+            <div class="timer-card">
+
+                <div class="timer-header">
+                    <span class="timer-mode">Foco</span>
+                </div>
+
+                <div class="timer-display">
+                    <h1>25:00</h1>
+                </div>
+
+                <div class="timer-controls">
+                    <button class="start-btn">Iniciar</button>
+                    <button class="pause-btn">Pausar</button>
+                    <button class="reset-btn">Resetar</button>
+                </div>
+
+                <div class="timer-session-info">
+                    <p>Sessão 1 de 8</p>
+                </div>
+
+            </div>
+
+            <!-- Card de histórico -->
+            <div class="history-card">
+                <h3>Histórico</h3>
+
+                <div class="history-list">
+                    <div class="history-item">
+                        <span>✓</span>
+                        <p>25 minutos</p>
+                    </div>
+
+                    <div class="history-item">
+                        <span>✓</span>
+                        <p>50 minutos</p>
+                    </div>
+
+                    <div class="history-item">
+                        <span>✓</span>
+                        <p>90 minutos</p>
+                    </div>
+                </div>
+
+                <div class="history-total">
+                    <h4>Tempo focado</h4>
+                    <strong>2h 40min</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =========================
+        BAIXO: CONFIGURAÇÃO + RESUMO
+        ========================== -->
+        <section class="pomodoro-bottom">
+
+            <!-- Card de configuração -->
+            <div class="config-card">
+                <h3>Configuração</h3>
+
+                <div class="config-group">
+                    <label>Tempo de foco</label>
+
+                    <div class="config-controls">
+                        <button>-</button>
+                        <span>25:00</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <label>Tempo de pausa</label>
+
+                    <div class="config-controls">
+                        <button>-</button>
+                        <span>5:00</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <label>Ciclos</label>
+
+                    <div class="config-controls">
+                        <button>-</button>
+                        <span>8</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de resumo -->
+            <div class="summary-card">
+                <h3>Resumo da sessão</h3>
+
+                <div class="summary-info">
+                    <div class="summary-item">
+                        <div class="summary-label">
+                            <strong>Tempo total</strong>
+                            <span>2h 40min</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-item">
+                        <div class="summary-label">
+                            <strong>Término previsto</strong>
+                            <span>20:30</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Total de ciclos</span>
+                        <strong>8</strong>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </main>
+
+    <!-- Script responsável por carregar o layout compartilhado -->
     <script src="/js/auth/layout/loadLayout.js"></script>
-        
 </body>
 </html>
