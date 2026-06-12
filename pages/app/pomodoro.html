@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Configuração básica da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Estilos globais do app -->
     <link rel="stylesheet" href="/css/global.css">
-
-    <!-- Estilo específico da página Pomodoro -->
     <link rel="stylesheet" href="/css/pomodoro.css">
 
     <title>Pomodoro</title>
 </head>
 <body>
 
-    <!-- Layout compartilhado carregado via JS -->
+    <!-- Layout compartilhado -->
     <div id="layout-container"></div>
 
-    <!-- Conteúdo principal da página -->
     <main class="main-content" id="pomodoro-content">
-
         <h2>Pomodoro</h2>
 
         <!-- =========================
@@ -28,27 +22,51 @@
         ========================== -->
         <section class="pomodoro-top">
 
-            <!-- Card de presets -->
+            <!-- Presets -->
             <div class="preset-card">
                 <h3>Escolha um preset</h3>
 
                 <div class="preset-grid">
-                    <button class="preset-btn">
+                    <button
+                        class="preset-btn"
+                        id="preset-classic"
+                        data-focus="25"
+                        data-break="5"
+                        data-sessions="4"
+                    >
                         <strong>Clássico</strong>
                         <span>25/5</span>
                     </button>
 
-                    <button class="preset-btn">
+                    <button
+                        class="preset-btn"
+                        id="preset-deep-work"
+                        data-focus="50"
+                        data-break="10"
+                        data-sessions="4"
+                    >
                         <strong>Deep Work</strong>
                         <span>50/10</span>
                     </button>
 
-                    <button class="preset-btn">
+                    <button
+                        class="preset-btn"
+                        id="preset-programming"
+                        data-focus="90"
+                        data-break="20"
+                        data-sessions="4"
+                    >
                         <strong>Programação</strong>
                         <span>90/20</span>
                     </button>
 
-                    <button class="preset-btn">
+                    <button
+                        class="preset-btn"
+                        id="preset-custom"
+                        data-focus="25"
+                        data-break="5"
+                        data-sessions="4"
+                    >
                         <strong>Personalizado</strong>
                         <img
                             class="preset-icon"
@@ -59,13 +77,13 @@
                 </div>
             </div>
 
-            <!-- Card de progresso da sessão -->
+            <!-- Progresso da sessão -->
             <div class="session-progress-card">
                 <h3>Progresso da sessão</h3>
 
                 <div class="session-progress-info">
                     <span class="progress-value">0%</span>
-                    <span class="cycle-info">0 de 8 ciclos</span>
+                    <span class="cycle-info">0 de 4 ciclos</span>
                     <span class="time-estimate">Final previsto: 20:30</span>
                 </div>
             </div>
@@ -77,30 +95,37 @@
         ========================== -->
         <section class="pomodoro-center">
 
-            <!-- Card principal do timer -->
+            <!-- Timer principal -->
             <div class="timer-card">
 
-                <div class="timer-header">
-                    <span class="timer-mode">Foco</span>
+                <!-- Círculo de progresso -->
+                <div class="timer-ring" id="timer-ring">
+                    <div class="timer-ring-inner">
+
+                        <div class="timer-header">
+                            <span class="timer-mode">Foco</span>
+                        </div>
+
+                        <div class="timer-display" id="timer-display">
+                            <h1>25:00</h1>
+                        </div>
+
+                        <div class="timer-session-info">
+                            <p>Sessão 1 de 4</p>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="timer-display">
-                    <h1>25:00</h1>
-                </div>
-
+                <!-- Controles -->
                 <div class="timer-controls">
-                    <button class="start-btn">Iniciar</button>
-                    <button class="pause-btn">Pausar</button>
-                    <button class="reset-btn">Resetar</button>
-                </div>
-
-                <div class="timer-session-info">
-                    <p>Sessão 1 de 8</p>
+                    <button class="reset-btn" id="reset-btn">Reiniciar</button>
+                    <button class="start-btn" id="start-btn">Iniciar</button>
                 </div>
 
             </div>
 
-            <!-- Card de histórico -->
+            <!-- Histórico -->
             <div class="history-card">
                 <h3>Histórico</h3>
 
@@ -134,72 +159,67 @@
         ========================== -->
         <section class="pomodoro-bottom">
 
-            <!-- Card de configuração -->
+            <!-- Configuração -->
             <div class="config-card">
-                <h3>Configuração</h3>
+                <h3>Configurar sessão</h3>
 
                 <div class="config-group">
                     <label>Tempo de foco</label>
-
                     <div class="config-controls">
-                        <button>-</button>
-                        <span>25:00</span>
-                        <button>+</button>
+                        <button type="button" class="config-minus" data-target="focus">-</button>
+                        <span class="config-value" id="focus-value">25</span>
+                        <button type="button" class="config-plus" data-target="focus">+</button>
+                        <span class="config-unit">min</span>
                     </div>
                 </div>
 
                 <div class="config-group">
                     <label>Tempo de pausa</label>
-
                     <div class="config-controls">
-                        <button>-</button>
-                        <span>5:00</span>
-                        <button>+</button>
+                        <button type="button" class="config-minus" data-target="break">-</button>
+                        <span class="config-value" id="break-value">5</span>
+                        <button type="button" class="config-plus" data-target="break">+</button>
+                        <span class="config-unit">min</span>
                     </div>
                 </div>
 
                 <div class="config-group">
-                    <label>Ciclos</label>
-
+                    <label>Quantidade de ciclos</label>
                     <div class="config-controls">
-                        <button>-</button>
-                        <span>8</span>
-                        <button>+</button>
+                        <button type="button" class="config-minus" data-target="sessions">-</button>
+                        <span class="config-value" id="sessions-value">4</span>
+                        <button type="button" class="config-plus" data-target="sessions">+</button>
+                        <span class="config-unit">ciclos</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Card de resumo -->
+            <!-- Resumo -->
             <div class="summary-card">
                 <h3>Resumo da sessão</h3>
 
                 <div class="summary-info">
                     <div class="summary-item">
-                        <div class="summary-label">
-                            <strong>Tempo total</strong>
-                            <span>2h 40min</span>
-                        </div>
+                        <span class="summary-label">Tempo total</span>
+                        <strong id="total-time">2h 40min</strong>
                     </div>
 
                     <div class="summary-item">
-                        <div class="summary-label">
-                            <strong>Término previsto</strong>
-                            <span>20:30</span>
-                        </div>
+                        <span class="summary-label">Término previsto</span>
+                        <strong id="end-time">20:30</strong>
                     </div>
 
                     <div class="summary-item">
                         <span class="summary-label">Total de ciclos</span>
-                        <strong>8</strong>
+                        <strong id="total-cycles">4</strong>
                     </div>
                 </div>
             </div>
 
         </section>
-
     </main>
 
-    <!-- Script responsável por carregar o layout compartilhado -->
     <script src="/js/auth/layout/loadLayout.js"></script>
+    <script src="/js/auth/pages/pomodoro.js"></script>
 </body>
 </html>
